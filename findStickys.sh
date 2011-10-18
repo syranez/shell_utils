@@ -30,7 +30,7 @@ findCvsDirs () {
    fi
 
    local path=$1;
-   
+
    for f in $(find $path -type d -name 'CVS'); do
        FS_CVSDIRS[$i]="$f";
        i=$((i+1));
@@ -46,6 +46,7 @@ checkCvsData () {
        exit 1;
    fi
 
+   local i="0";
    local path=$1;
    local length=$((${#path} - 4))
    local lines=$(wc -l "$path/Entries" | awk '{print $1}');
