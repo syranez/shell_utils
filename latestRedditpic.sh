@@ -36,12 +36,10 @@ get () {
     local uri="${1}";
 
     wget -q "${uri}" -O ${OUTPUT};
-
-    return $?;
 }
 
 latest=$(getUriLatestPicture);
 
 get "${latest}";
 
-return $?;
+exit;

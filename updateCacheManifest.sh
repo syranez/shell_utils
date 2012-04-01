@@ -18,10 +18,8 @@ update () {
     local newcount=$((count + 1))
 
     sed -i -e"s/# v${count}/# v${newcount}/" "${MANIFEST}";
-
-    return $?
 }
 
 update;
 
-exit $?;
+exit;

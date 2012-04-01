@@ -25,17 +25,16 @@ getUriLatestPicture () {
 #
 # @param string uri
 # @writes /tmp/latest.jpg
+# @returns wget status
 get () {
 
     local uri="${1}";
 
     wget -q "${uri}" -O ${OUTPUT};
-
-    return $?;
 }
 
 latest=$(getUriLatestPicture);
 
 get "${latest}";
 
-exit $?;
+exit;
